@@ -31,6 +31,10 @@ public class PostService {
         return postRepository.findWithShareLockById(id);
     }
 
+    public Optional<Post> findWithWriteLockById(Long id) {
+        return postRepository.findWithWriteLockById(id);
+    }
+
     public Post create(String subject, String content, String username) {
        Post post =  Post.builder()
                .subject(subject)
